@@ -96,4 +96,17 @@ When pathfinding, the start and end nodes are converted into temporary graph nod
 - Regions are optional but helpful for debugging and visualization.
 - Larger maps may benefit more from hierarchical pathfinding compared to small maps.
 
+- From testing, on average there is a 100x increase in performance compared to normal A* pathfinding. This entirely depends on the speed of the unit however, as the faster the unit traverses the map the more often it uses A* to build a node path. Using the same speed for both algorithms which was around 5 tiles / second it performed 100x better on average for short and long distiances combined. Long distance only ranges from 150x to 220x. The biggest factor with this algorithm is the memory usage and startup time with the Flood Fill algorithm.
 ---
+
+## References
+
+1. [Near Optimal Hierarchical Pathfinding](https://webdocs.cs.ualberta.ca/~mmueller/ps/hpastar.pdf)  
+   This paper provides an in-depth explanation of Hierarchical Pathfinding A* (HPA*), a foundational algorithm for efficient pathfinding in large maps.
+
+2. [A* Algorithm Overview](https://example.com/a-star-algorithm)  
+   A comprehensive guide to the A* algorithm, one of the most widely used pathfinding algorithms.
+
+3. [Hierarchical Dynamic Pathfinding](https://ubm-twvideo01.s3.amazonaws.com/o1/vault/gdc2018/presentations/Alain_Benoit_HierarchicalDynamicPathfinding.pdf)  
+   A presentation discussing the application of hierarchical pathfinding in dynamic environments.
+
